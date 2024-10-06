@@ -3,7 +3,7 @@ const router = useRouter()
 </script>
 <template>
   <v-app>
-    <v-app-bar scroll-behavior="fully-hide" :elevation="0" height="40" color="#E0D5C3" > ещё один хедер </v-app-bar>
+    <!-- <v-app-bar scroll-behavior="fully-hide" :elevation="0" height="40" color="#E0D5C3" > ещё один хедер </v-app-bar>
     <v-app-bar :elevation="0" height="80">
       <v-row class="d-flex justify-center">
         <v-col cols="6" class="d-flex justify-space-around align-center">
@@ -25,7 +25,7 @@ const router = useRouter()
           <div class="phone-navigation d-flex d-md-none">on phone</div>
         </v-col>
       </v-row>
-    </v-app-bar>
+    </v-app-bar> -->
 
     <v-main>
       <slot />
