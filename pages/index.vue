@@ -4,8 +4,8 @@ const router = useRouter()
 
 <template>
   <v-row class="d-flex justify-center">
-    <v-col cols="12" class="px-10 pt-8">
-      <v-carousel hide-delimiters cycle>
+    <v-col cols="11" class="pt-8">
+      <v-carousel hide-delimiters cycle style="border-radius: 8px;">
         <v-carousel-item
           src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
           cover
@@ -25,7 +25,7 @@ const router = useRouter()
   </v-row>
 
   <v-row class="d-flex justify-center">
-    <v-col cols="11" md="10">
+    <v-col cols="11">
       <ul class="mass">
         <li class="mass_types" @click="router.push('/info')">
           <img src="/assets/images/массаж тема лютая.jpg" alt="" />
