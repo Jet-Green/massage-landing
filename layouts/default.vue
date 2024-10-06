@@ -31,7 +31,8 @@ const router = useRouter()
       <slot />
       <v-row>
         <v-col cols="12" color="#2B2B2B" class="contacts">
-          Запишись
+          Запишись на пробное занятие, &nbsp;<NuxtLink to="tel:+79127528877">+79127528877</NuxtLink><br>
+          Или пишите <NuxtLink to="https://vk.com">VK</NuxtLink>
         </v-col>
       </v-row>
       <!-- <h3>Основные цвета:</h3>

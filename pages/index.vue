@@ -1,4 +1,6 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const router = useRouter()
+</script>
 
 <template>
   <v-row class="d-flex justify-center">
@@ -25,27 +27,27 @@
   <v-row class="d-flex justify-center">
     <v-col cols="11" md="10">
       <ul class="mass">
-        <li class="mass_types">
+        <li class="mass_types" @click="router.push('/info')">
           <img src="/assets/images/массаж тема лютая.jpg" alt="" />
           <h2>fibfghiuf</h2>
           <p>gjkgjkgffj</p>
         </li>
-        <li class="mass_types">
+        <li class="mass_types" @click="router.push('/info')">
           <img src="/assets/images/массаж тема лютая.jpg" alt="" />
           <h2>fibfghiuf</h2>
           <p>gjkgjkgffj</p>
         </li>
-        <li class="mass_types">
+        <li class="mass_types" @click="router.push('/info')">
           <img src="/assets/images/массаж тема лютая.jpg" alt="" />
           <h2>fibfghiuf</h2>
           <p>gjkgjkgffj</p>
         </li>
-        <li class="mass_types">
+        <li class="mass_types" @click="router.push('/info')">
           <img src="/assets/images/массаж тема лютая.jpg" alt="" />
           <h2>fibfghiuf</h2>
           <p>gjkgjkgffj</p>
         </li>
-        <li class="mass_types">
+        <li class="mass_types" @click="router.push('/info')">
           <img src="/assets/images/массаж тема лютая.jpg" alt="" />
           <h2>fibfghiuf</h2>
           <p>gjkgjkgffj</p>
