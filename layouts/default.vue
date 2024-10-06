@@ -3,6 +3,9 @@ const router = useRouter()
 </script>
 <template>
   <v-app>
+    <v-app-bar :elevation="0" height="40">
+      ещё один хедер
+    </v-app-bar>
     <v-app-bar :elevation="0">
       <v-row>
         <v-col cols="12" class="d-flex justify-center">
