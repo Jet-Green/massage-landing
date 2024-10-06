@@ -2,8 +2,8 @@
 @import "../../node_modules/ol/ol.css";
 
 @font-face {
-  font-family: 'Sensei';
-  src: url('~/assets/fonts/Sensei.ttf') format('truetype');
+  font-family: "Sensei";
+  src: url("~/assets/fonts/Sensei.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -15,7 +15,7 @@ button.v-btn[disabled] {
 }
 * {
   font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto; 
+  font-optical-sizing: auto;
 }
 a {
   outline: none;
@@ -41,4 +41,7 @@ h2 {
 }
 h3 {
   font-weight: 500;
+}
+body {
+  font-size: clamp(1rem, 0.9006rem + 0.2841vw, 1.125rem);
 }

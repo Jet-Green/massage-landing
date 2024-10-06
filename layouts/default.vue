@@ -5,8 +5,8 @@ const router = useRouter()
   <v-app>
     <v-app-bar scroll-behavior="fully-hide" :elevation="0" height="40" color="#E0D5C3" > ещё один хедер </v-app-bar>
     <v-app-bar :elevation="0" height="80">
-      <v-row>
-        <v-col cols="12" class="d-flex justify-center align-center">
+      <v-row class="d-flex justify-center">
+        <v-col cols="6" class="d-flex justify-space-around align-center">
           <img class="logo" @click="router.push('/')" src="" alt="логотип" />
           <div class="desktop-navigation d-md-flex d-none">
             <div class="nav-item border-right">
@@ -51,6 +51,8 @@ const router = useRouter()
     margin-right: 0;
     padding: 13px 0px;
     padding-right: 10px;
+    display: flex;
+    align-items: center;
   }
   .border-right {
     border-right: 1px solid rgba(128, 146, 72, 0.2);
