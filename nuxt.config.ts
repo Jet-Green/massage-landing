@@ -17,7 +17,6 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
     },
   },
-
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook("vite:extendConfig", (config) => {
@@ -48,8 +47,8 @@ export default defineNuxtConfig({
     registerType: 'autoUpdate',
     includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', 'images/apple-touch-icon.png'],
     manifest: {
-      name: 'Название',
-      short_name: 'Название',
+      name: 'Массаж',
+      short_name: 'Массаж',
       description: 'Описание',
       theme_color: '#ffffff',
       background_color: "#ffffff",
