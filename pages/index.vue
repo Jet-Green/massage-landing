@@ -1,8 +1,8 @@
 <script lang="ts" setup></script>
 
 <template>
-  <v-row>
-    <v-col cols="12">
+  <v-row class="d-flex justify-center">
+    <v-col cols="12" class="px-10 pt-8">
       <v-carousel hide-delimiters cycle>
         <v-carousel-item
           src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"

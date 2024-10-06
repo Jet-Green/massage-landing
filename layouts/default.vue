@@ -67,5 +67,7 @@ const router = useRouter()
 .contacts {
   background-color: #2B2B2B;
   color: #EDDB99;
+  display: flex;
+  justify-content: center;
 }
 </style>
