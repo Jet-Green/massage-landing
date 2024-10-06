@@ -49,7 +49,7 @@
 </template>
 <style scoped lang="scss">
 .heading {
-  // margin-top: 20px;
+  margin-top: 60px;
   margin-bottom: 20px;
 }
 img {
