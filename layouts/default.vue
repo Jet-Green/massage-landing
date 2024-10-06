@@ -22,6 +22,7 @@ const router = useRouter()
 
     <v-main>
       <slot />
+      тут будет подвал
     </v-main>
   </v-app>
 </template>
