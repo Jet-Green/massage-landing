@@ -7,4 +7,4 @@
   <h2>Это заголовок поменьше</h2>
   <h3>Это акцентный текст</h3>  
 </template>
-<style></style>
+<style scoped lang="scss"></style>
