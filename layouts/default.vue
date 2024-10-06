@@ -19,7 +19,7 @@ const router = useRouter()
         </v-col>
       </v-row>
     </v-app-bar>
-
+    
     <v-main>
       <slot />
       тут будет подвал
