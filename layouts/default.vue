@@ -29,13 +29,17 @@ const router = useRouter()
 
     <v-main>
       <slot />
-      тут будет подвал
-      <h3>Основные цвета:</h3>
+      <v-row>
+        <v-col cols="12" color="#2B2B2B" class="contacts">
+          Запишись
+        </v-col>
+      </v-row>
+      <!-- <h3>Основные цвета:</h3>
       <v-sheet color="#809248" height="50" width="50"></v-sheet>
       <v-sheet color="#E0D5C3" height="50" width="50"></v-sheet>
       <v-sheet color="#5C5B58" height="50" width="50"></v-sheet>
       <v-sheet color="#2B2B2B" height="50" width="50"></v-sheet>
-      <v-sheet color="#303030" height="50" width="50"></v-sheet>
+      <v-sheet color="#303030" height="50" width="50"></v-sheet> -->
     </v-main>
   </v-app>
 </template>
@@ -59,5 +63,9 @@ const router = useRouter()
   }
 }
 .phone-navigation {
+}
+.contacts {
+  background-color: #2B2B2B;
+  color: #EDDB99;
 }
 </style>
