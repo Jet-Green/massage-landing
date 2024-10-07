@@ -88,7 +88,9 @@ const router = useRouter()
                 <v-col cols="6"> © 20xx-2024 MASSAGESTUDIO Пермь </v-col>
                 <v-col cols="6" class="d-flex justify-end">
                 <NuxtLink to="/">
-                  Разрабы
+                  <b>
+                    Над сайтом работали
+                  </b>
                 </NuxtLink>
                 </v-col>
               </v-row>
