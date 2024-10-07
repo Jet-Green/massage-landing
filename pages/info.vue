@@ -97,12 +97,16 @@
 //   width: 50%;
 // }
 .card {
-  background-color: white;
+  background-color: #eddb99;
+  color: #809248;
   border-radius: 8px;
   margin-top: 30px;
   margin-bottom: 30px;
   img {
     border-radius: 8px;
+  }
+  p {
+    color: black;
   }
 }
 .super-blur-image {
