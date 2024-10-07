@@ -1,17 +1,43 @@
 <script setup lang="ts"></script>
 <template>
-  <v-row class="d-flex justify-center" style="background-color: #e0d5c3">
-    <v-col cols="11" md="10">
-      <h1 class="heading">Название массажа</h1>
+  <v-row class="d-flex justify-center super-blur-image">
+    <v-col cols="11" md="8">
+      <v-row class="card">
+        <v-col cols="6">
+          <img src="/assets/images/массаж тема лютая.jpg" alt="" style="width: 100%" />
+        </v-col>
+        <v-col>
+          <h2>что дает</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore sint sed voluptate, natus
+            impedit ullam eveniet voluptatibus consequuntur nobis illo optio, quos autem nemo modi. Dolores expedita
+            natus vitae!
+          </p>
+        </v-col>
+      </v-row>
+      <v-row class="card">
+        <v-col>
+          <h2>Какой результат</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore sint sed voluptate, natus
+            impedit ullam eveniet voluptatibus consequuntur nobis illo optio, quos autem nemo modi. Dolores expedita
+            natus vitae!
+          </p>
+        </v-col>
+        <v-col cols="6">
+          <img src="/assets/images/массаж тема лютая.jpg" alt="" style="width: 100%" />
+        </v-col>
+      </v-row>
+
+      <!-- <h1 class="heading">Название массажа</h1>
       <div class="about">
         <img src="/assets/images/массаж тема лютая.jpg" alt="" />
         <div class="wrapper">
           <h2>что дает</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-            dolore sint sed voluptate, natus impedit ullam eveniet voluptatibus
-            consequuntur nobis illo optio, quos autem nemo modi. Dolores
-            expedita natus vitae!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore sint sed voluptate, natus
+            impedit ullam eveniet voluptatibus consequuntur nobis illo optio, quos autem nemo modi. Dolores expedita
+            natus vitae!
           </p>
         </div>
       </div>
@@ -19,10 +45,9 @@
         <div class="wrapper">
           <h2>что дает</h2>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
-            autem, iste veniam ratione esse veritatis repudiandae non
-            necessitatibus nisi debitis sit vel pariatur beatae laborum facere,
-            minima aut, illo obcaecati!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem autem, iste veniam ratione esse veritatis
+            repudiandae non necessitatibus nisi debitis sit vel pariatur beatae laborum facere, minima aut, illo
+            obcaecati!
           </p>
         </div>
         <img src="/assets/images/массаж тема лютая.jpg" alt="" />
@@ -31,37 +56,57 @@
         <div class="wrapper w-100">
           <h2>что дает</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-            enim perferendis, obcaecati laboriosam sed ad aliquid laborum! Quo
-            nesciunt laborum excepturi, nobis similique enim cupiditate rem, at,
-            molestiae laboriosam earum?Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Fugit aliquam ullam quia voluptas nisi fuga beatae
-            rerum veritatis cumque exercitationem at, dolorem rem minus
-            quibusdam sed molestias sit in Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Odio, at consequatur maxime iusto ab
-            commodi animi? Pariatur minima repellat totam est atque, quidem
-            deleniti quisquam nulla, perferendis reprehenderit dicta eum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur enim perferendis, obcaecati laboriosam
+            sed ad aliquid laborum! Quo nesciunt laborum excepturi, nobis similique enim cupiditate rem, at, molestiae
+            laboriosam earum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit aliquam ullam quia voluptas
+            nisi fuga beatae rerum veritatis cumque exercitationem at, dolorem rem minus quibusdam sed molestias sit in
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, at consequatur maxime iusto ab commodi
+            animi? Pariatur minima repellat totam est atque, quidem deleniti quisquam nulla, perferendis reprehenderit
+            dicta eum?
           </p>
         </div>
-      </div>
+      </div> -->
+    </v-col>
+  </v-row>
+  <v-row class="d-flex justify-center" style="background-color: #809248; color: white;">
+    <v-col cols="11" md="8">
+      <h2>Кому надо</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit incidunt nobis voluptatibus minima consequuntur in quaerat quia illum labore nam nostrum blanditiis quam ratione nulla sequi, vel officiis architecto?</p>
+    </v-col>
+    <v-col cols="11" md="8">
+      <h2>Противопоказания</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore recusandae dolorum ab ut voluptates aspernatur. Voluptatem, quaerat voluptatibus. Commodi minus quo quam ab harum rem minima? Error, similique quas.</p>
     </v-col>
   </v-row>
 </template>
 <style scoped lang="scss">
-.heading {
-  margin-top: 60px;
-  margin-bottom: 20px;
-}
-img {
-  max-width: 50%;
-}
-.about {
-  display: flex;
+// .heading {
+//   margin-top: 60px;
+//   margin-bottom: 20px;
+// }
+// img {
+//   max-width: 50%;
+// }
+// .about {
+//   display: flex;
 
-  color: #303030;
+//   color: #303030;
+// }
+// .wrapper {
+//   margin-left: 20px;
+//   width: 50%;
+// }
+.card {
+  background-color: white;
+  border-radius: 8px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  img {
+    border-radius: 8px;
+  }
 }
-.wrapper {
-  margin-left: 20px;
-  width: 50%;
+.super-blur-image {
+  background-image: url('../assets/images/background.jpg');
+  background-size: cover;
 }
 </style>

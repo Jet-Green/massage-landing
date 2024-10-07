@@ -42,7 +42,7 @@ const router = useRouter()
         </v-col>
         <v-col cols="12" class="main-info">
           <v-row class="d-flex justify-center">
-            <v-col cols="10" md="8">
+            <v-col cols="11" md="8">
               <v-row>
                 <v-col cols="12" md="4">
                   <h3>О студии</h3>
@@ -135,7 +135,8 @@ const router = useRouter()
 }
 .main-info {
   background-color: #303030;
-  padding: 50px 0px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   h3 {
     color: white;
   }
