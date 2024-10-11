@@ -1,13 +1,33 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRouter } from "vue-router"
+
+const router = useRouter()
+</script>
 <template>
-  <v-row class="d-flex justify-center super-blur-image">
+  <v-row class="d-flex justify-center">
     <v-col cols="11" md="8">
       <v-row class="card">
-        <v-col cols="6">
-          <img src="/assets/images/массаж тема лютая.jpg" alt="" style="width: 100%" />
+        <v-col
+          cols="12"
+          style="display: flex; justify-content: start; align-items: center; font-size: 25px; cursor: pointer;"
+          @click="router.push('/')"
+        >
+          <v-icon class="mr-4" icon="mdi-arrow-left"></v-icon>
+          <h1>Лимфодренажный массаж</h1>
+        </v-col>
+        <v-col cols="12" sm="6">
+          <img src="/assets/images/main-page-img.jpg" alt="" style="width: 100%" />
         </v-col>
         <v-col>
-          <h2>что дает</h2>
+          <h2>Эффект от массажа</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore sint sed voluptate, natus
+            impedit ullam eveniet voluptatibus consequuntur nobis illo optio, quos autem nemo modi. Dolores expedita
+            natus vitae!
+          </p>
+        </v-col>
+        <v-col cols="12">
+          <h2>Какой результат</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore sint sed voluptate, natus
             impedit ullam eveniet voluptatibus consequuntur nobis illo optio, quos autem nemo modi. Dolores expedita
@@ -15,7 +35,7 @@
           </p>
         </v-col>
       </v-row>
-      <v-row class="card">
+      <!-- <v-row class="card">
         <v-col>
           <h2>Какой результат</h2>
           <p>
@@ -27,7 +47,7 @@
         <v-col cols="6">
           <img src="/assets/images/массаж тема лютая.jpg" alt="" style="width: 100%" />
         </v-col>
-      </v-row>
+      </v-row> -->
 
       <!-- <h1 class="heading">Название массажа</h1>
       <div class="about">
@@ -68,14 +88,21 @@
       </div> -->
     </v-col>
   </v-row>
-  <v-row class="d-flex justify-center" style="background-color: #809248; color: white;">
+  <v-row class="d-flex justify-center" style="background-color: #809248; color: white">
     <v-col cols="11" md="8">
-      <h2>Кому надо</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit incidunt nobis voluptatibus minima consequuntur in quaerat quia illum labore nam nostrum blanditiis quam ratione nulla sequi, vel officiis architecto?</p>
+      <h2>Показания к массажу</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit incidunt nobis voluptatibus
+        minima consequuntur in quaerat quia illum labore nam nostrum blanditiis quam ratione nulla sequi, vel officiis
+        architecto?
+      </p>
     </v-col>
     <v-col cols="11" md="8">
       <h2>Противопоказания</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore recusandae dolorum ab ut voluptates aspernatur. Voluptatem, quaerat voluptatibus. Commodi minus quo quam ab harum rem minima? Error, similique quas.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore recusandae dolorum ab ut voluptates
+        aspernatur. Voluptatem, quaerat voluptatibus. Commodi minus quo quam ab harum rem minima? Error, similique quas.
+      </p>
     </v-col>
   </v-row>
 </template>
@@ -97,7 +124,7 @@
 //   width: 50%;
 // }
 .card {
-  background-color: #eddb99;
+  // background-color: #eddb99;
   color: #809248;
   border-radius: 8px;
   margin-top: 30px;
@@ -108,9 +135,5 @@
   p {
     color: black;
   }
-}
-.super-blur-image {
-  background-image: url('../assets/images/background.jpg');
-  background-size: cover;
 }
 </style>

@@ -6,7 +6,7 @@ const router = useRouter()
   <v-row class="super-blur-image">
     <v-col cols="12">
       <v-row class="d-flex justify-center">
-        <v-col cols="10" md="8" class="pt-8">
+        <v-col cols="11" md="10" class="pt-8">
           <v-carousel hide-delimiters cycle style="border-radius: 8px">
             <template v-slot:prev="{ props }">
               <v-btn class="carousel-btn" @click="props.onClick" icon="mdi-chevron-left"></v-btn>
@@ -23,12 +23,18 @@ const router = useRouter()
         </v-col>
       </v-row>
 
+      <v-row class="d-flex justify-center text-center" style="margin-top: 50px; margin-bottom: 50px;">
+        <v-col cols="11" md="10">
+          <h3 style="font-size: clamp(1.25rem, 0.7528rem + 1.4205vw, 1.875rem); color: #303030;">Мы — команда квалифицированных преподавателей. <br> У нас вы найдете индивидуальный подход, дружескую теплую атмосферу, уютные и чистые залы.</h3>
+        </v-col>
+      </v-row>
+
       <v-row class="d-flex justify-center">
-        <v-col cols="10" md="8">
+        <v-col cols="11" md="10">
           <ul class="mass">
             <li class="mass_types card" @click="router.push('/info')">
-              <img src="/assets/images/массаж тема лютая.jpg" alt="" />
-              <h2>fibfghiuf</h2>
+              <img src="/assets/images/main-page-img.jpg" alt="" />
+              <h2 style="color: #666;">fibfghiuf</h2>
               <p>gjkgjkgffj</p>
             </li>
             <li class="mass_types card" @click="router.push('/info')">
@@ -89,27 +95,31 @@ const router = useRouter()
     }
 
     h2 {
-      font-size: 1.5rem;
+      // font-size: 1.5rem;
+      color: #2B2B2B;
+      font-weight: 700;
       margin: 10px;
     }
 
     p {
-      font-size: 1rem;
       color: #666;
       margin: 10px;
     }
   }
 }
 .super-blur-image {
-  background-image: url("../assets/images/background2.jpg");
+  // background-image: url("../assets/images/background2.jpg");
   background-size: cover;
+  // background-color: #eddb99;
+
 }
 .card {
-  background-color: #eddb99;
+  background-color: #EFDEB3;
   padding: 4px;
   border-radius: 8px;
   cursor: pointer;
   color: #809248;
+  // color: white;
 }
 .carousel-btn {
   background-color: #eddb99;
