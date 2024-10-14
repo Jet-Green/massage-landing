@@ -3,7 +3,17 @@ const router = useRouter()
 </script>
 <template>
   <v-app>
-    <!-- <v-app-bar scroll-behavior="fully-hide" :elevation="0" height="40" color="#E0D5C3" > ещё один хедер </v-app-bar>
+    <v-app-bar scroll-behavior="fully-hide" :elevation="0" height="40" color="#E0D5C3">
+      <v-row class="d-flex justify-center">
+        <v-col cols="11" md="8" class="second-header">
+          Массаж в Перми
+          <div>
+            <v-icon icon="mdi-phone" style="font-size: 18px"></v-icon>
+            <NuxtLink to="tel:+7982457-50-51">+7 982 457-50-51</NuxtLink>
+          </div>
+        </v-col>
+      </v-row>
+    </v-app-bar>
     <v-app-bar :elevation="0" height="80">
       <v-row class="d-flex justify-center">
         <v-col cols="6" class="d-flex justify-space-around align-center">
@@ -13,19 +23,19 @@ const router = useRouter()
               <NuxtLink to="/sdf"> Виды массажа </NuxtLink>
             </div>
             <div class="nav-item border-right">
-              <NuxtLink to="/schedule"> Расписание </NuxtLink>
+              <NuxtLink :to="{ path: '/', hash: '#footer' }"> Расписание </NuxtLink>
             </div>
             <div class="nav-item border-right">
               <NuxtLink to="/price"> Стоимость </NuxtLink>
             </div>
             <div class="nav-item">
-              <NuxtLink> Обучение </NuxtLink>
+              <NuxtLink :to="{ path: '/', hash: '#footer' }"> Обучение </NuxtLink>
             </div>
           </div>
           <div class="phone-navigation d-flex d-md-none">on phone</div>
         </v-col>
       </v-row>
-    </v-app-bar> -->
+    </v-app-bar>
 
     <v-main>
       <slot />
@@ -40,7 +50,7 @@ const router = useRouter()
             >
           </div>
         </v-col>
-        <v-col cols="12" class="main-info">
+        <v-col cols="12" class="main-info" id="footer">
           <v-row class="d-flex justify-center">
             <v-col cols="11" md="8">
               <v-row>
@@ -87,11 +97,9 @@ const router = useRouter()
               <v-row>
                 <v-col cols="6"> © 20xx-2024 MASSAGESTUDIO Пермь </v-col>
                 <v-col cols="6" class="d-flex justify-end">
-                <NuxtLink to="/">
-                  <b>
-                    Над сайтом работали
-                  </b>
-                </NuxtLink>
+                  <NuxtLink to="/">
+                    <b> Над сайтом работали </b>
+                  </NuxtLink>
                 </v-col>
               </v-row>
             </v-col>
@@ -148,5 +156,9 @@ const router = useRouter()
   border-top: 1px solid rgba(128, 146, 72, 0.2);
   background-color: #303030;
   color: #eddb99;
+}
+.second-header {
+  display: flex;
+  justify-content: space-between;
 }
 </style>
