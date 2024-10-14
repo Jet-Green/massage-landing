@@ -1,5 +1,20 @@
 <script setup lang="ts">
 const router = useRouter()
+
+const massagesList = [
+  {
+    title: "Обычный",
+    to: "/info",
+  },
+  {
+    title: "Необычный",
+    to: "/info",
+  },
+  {
+    title: "С неграми",
+    to: "/info",
+  },
+]
 </script>
 <template>
   <v-app>
@@ -19,8 +34,21 @@ const router = useRouter()
         <v-col cols="6" class="d-flex justify-space-around align-center">
           <img class="logo" @click="router.push('/')" src="" alt="логотип" />
           <div class="desktop-navigation d-md-flex d-none">
-            <div class="nav-item border-right">
-              <NuxtLink to="/sdf"> Виды массажа </NuxtLink>
+            <div class="nav-item border-right" id="menu-activator">
+              <NuxtLink style="cursor: pointer"> Виды массажа <v-icon style="font-size: 16px;" icon="mdi-chevron-down"></v-icon> </NuxtLink>
+              <v-menu activator="#menu-activator">
+                <div class="menu">
+                  <div class="menu-item" v-for="(item, index) in massagesList" :key="index">
+                    <NuxtLink :to="item.to">{{ item.title }}</NuxtLink>
+                    <!-- {{ item }} -->
+                  </div>
+                </div>
+                <!-- <v-list>
+                  <v-list-item base-color="#809248" v-for="(item, index) in massagesList" :key="index" :value="index">
+                    <v-list-item-title>{{ item.title }}</v-list-item-title>
+                  </v-list-item>
+                </v-list> -->
+              </v-menu>
             </div>
             <div class="nav-item border-right">
               <NuxtLink :to="{ path: '/', hash: '#footer' }"> Расписание </NuxtLink>
@@ -160,5 +188,13 @@ const router = useRouter()
 .second-header {
   display: flex;
   justify-content: space-between;
+}
+.menu {
+  border: 1px solid rgba(128, 146, 72, 0.2);
+  border-radius: 4px;
+  background-color: white;
+  .menu-item {
+    padding: 10px;
+  }
 }
 </style>
