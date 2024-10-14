@@ -79,7 +79,12 @@ const items = [
       <v-row class="d-flex justify-center">
         <v-col cols="12" sm="10" md="8">
           <ul class="cardd">
-            <li class="cardd__ite" v-for="(item, index) in items" :key="index">
+            <li
+              class="cardd__ite"
+              v-for="(item, index) in items"
+              :key="index"
+              @click="router.push('/info')"
+            >
               <img :src="item.image" alt="" />
               <p class="title">{{ item.title }}</p>
               <p class="subtitle">{{ item.subtitle }}</p>
