@@ -67,11 +67,12 @@ const items = [
 
       <v-row class="d-flex justify-center text-center mt-5 mb-5">
         <v-col cols="12" md="10" lg="8">
-          <h3 class="headline">
+          <p class="glav" style="padding: 50px 0 40px 0">MASSAGE</p>
+          <p class="headline">
             Мы — команда квалифицированных преподавателей. <br />
             У нас вы найдете индивидуальный подход, дружескую теплую атмосферу,
             уютные и чистые залы.
-          </h3>
+          </p>
         </v-col>
       </v-row>
 
@@ -104,20 +105,26 @@ const items = [
   flex: 1 0 45%; // адаптивная ширина для карточек
   max-width: 250px; // максимальная ширина карточки
 }
-
+.glav {
+  font-size: clamp(2rem, 1.6479rem + 1.1268vw, 3rem);
+}
 img {
   width: 100%; // изображение занимает всю ширину карточки
   border-radius: 8px; // скругленные края изображения
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
-
+img:hover {
+  transform: translateY(-10px);
+  transition: 0.4em;
+}
 .title {
   font-weight: 600;
   font-size: clamp(1rem, 1.162rem + 0.2817vw, 1.5rem);
 }
 
 .headline {
-  font-size: clamp(1.25rem, 0.7528rem + 1.4205vw, 1.875rem);
-  color: #303030;
+  font-size: clamp(1.25rem, 1.162rem + 0.2817vw, 1.5rem);
 }
 
 .super-blur-image {
@@ -135,5 +142,19 @@ img {
 .carousel-btn {
   background-color: #eddb99;
   color: #809248;
+}
+.cardd {
+  text-align: center;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; // Изменено на space-between для равномерного распределения элементов
+  margin: 0; // Убрали отступы по бокам
+}
+
+.cardd__ite {
+  margin: 10px 0; // Введен только вертикальный отступ
+  flex: 0 0 calc(25% - 20px); // Каждая карточка занимает 1/3 ширины с учетом отступа
+  max-width: calc(25% - 20px); // Максимальная ширина карточки
 }
 </style>
