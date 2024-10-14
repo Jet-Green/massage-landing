@@ -6,7 +6,7 @@ const router = useRouter()
   <v-row class="super-blur-image">
     <v-col cols="12">
       <v-row class="d-flex justify-center">
-        <v-col cols="11" md="10" class="pt-8">
+        <v-col cols="11" md="8" class="pt-8">
           <v-carousel hide-delimiters cycle style="border-radius: 8px">
             <template v-slot:prev="{ props }">
               <v-btn class="carousel-btn" @click="props.onClick" icon="mdi-chevron-left"></v-btn>
@@ -24,13 +24,13 @@ const router = useRouter()
       </v-row>
 
       <v-row class="d-flex justify-center text-center" style="margin-top: 50px; margin-bottom: 50px;">
-        <v-col cols="11" md="10">
+        <v-col cols="11" md="8">
           <h3 style="font-size: clamp(1.25rem, 0.7528rem + 1.4205vw, 1.875rem); color: #303030;">Мы — команда квалифицированных преподавателей. <br> У нас вы найдете индивидуальный подход, дружескую теплую атмосферу, уютные и чистые залы.</h3>
         </v-col>
       </v-row>
 
       <v-row class="d-flex justify-center">
-        <v-col cols="11" md="10">
+        <v-col cols="11" md="8">
           <ul class="mass">
             <li class="mass_types card" @click="router.push('/info')">
               <img src="/assets/images/main-page-img.jpg" alt="" />
