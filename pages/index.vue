@@ -1,66 +1,45 @@
 <script lang="ts" setup>
-const router = useRouter();
+const router = useRouter()
 
 const items = [
   {
     title: "выаав",
     subtitle: "ыавав",
-    image:
-      "https://i.pinimg.com/736x/13/e8/86/13e886fbec6287235522bb2a81b35f97.jpg",
+    image: "https://yogaperm.ru/wp-content/uploads/yoga-v-permi-yoga-v-gamakah.jpg",
   },
   {
     title: "выаав",
     subtitle: "ыавав",
-    image:
-      "https://i.pinimg.com/736x/13/e8/86/13e886fbec6287235522bb2a81b35f97.jpg",
+    image: "https://yogaperm.ru/wp-content/uploads/yoga-v-permi-yoga-v-gamakah.jpg",
   },
   {
     title: "выаав",
     subtitle: "ыавав",
-    image:
-      "https://i.pinimg.com/736x/13/e8/86/13e886fbec6287235522bb2a81b35f97.jpg",
+    image: "https://yogaperm.ru/wp-content/uploads/yoga-v-permi-yoga-v-gamakah.jpg",
   },
   {
     title: "выаав",
     subtitle: "ыавав",
-    image:
-      "https://i.pinimg.com/736x/13/e8/86/13e886fbec6287235522bb2a81b35f97.jpg",
+    image: "https://yogaperm.ru/wp-content/uploads/yoga-v-permi-yoga-v-gamakah.jpg",
   },
-];
+]
 </script>
 
 <template>
   <v-row class="super-blur-image">
     <v-col cols="12">
       <v-row class="d-flex justify-center">
-        <v-col cols="11" md="8" class="pt-8">
-          <v-carousel hide-delimiters cycle style="border-radius: 8px">
+        <v-col cols="12">
+          <v-carousel hide-delimiters cycle>
             <template v-slot:prev="{ props }">
-              <v-btn
-                class="carousel-btn"
-                @click="props.onClick"
-                icon="mdi-chevron-left"
-              ></v-btn>
+              <v-btn class="carousel-btn" @click="props.onClick" icon="mdi-chevron-left"></v-btn>
             </template>
             <template v-slot:next="{ props }">
-              <v-btn
-                class="carousel-btn"
-                @click="props.onClick"
-                icon="mdi-chevron-right"
-              ></v-btn>
+              <v-btn class="carousel-btn" @click="props.onClick" icon="mdi-chevron-right"></v-btn>
             </template>
-            <v-carousel-item
-              src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-              cover
-            ></v-carousel-item>
-            <v-carousel-item
-              src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg"
-              cover
-            ></v-carousel-item>
-            <v-carousel-item
-              src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-              cover
-            ></v-carousel-item>
+            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" cover></v-carousel-item>
+            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
+            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover></v-carousel-item>
           </v-carousel>
         </v-col>
       </v-row>
@@ -70,26 +49,45 @@ const items = [
           <p class="glav" style="padding: 50px 0 40px 0">MASSAGE</p>
           <p class="headline">
             Мы — команда квалифицированных преподавателей. <br />
-            У нас вы найдете индивидуальный подход, дружескую теплую атмосферу,
-            уютные и чистые залы.
+            У нас вы найдете индивидуальный подход, дружескую теплую атмосферу, уютные и чистые залы.
           </p>
         </v-col>
       </v-row>
 
-      <v-row class="d-flex justify-center">
-        <v-col cols="12" sm="10" md="8">
+      <v-row class="d-flex justify-center" style="margin-bottom: 50px">
+        <v-col cols="11" md="8">
           <ul class="cardd">
-            <li
-              class="cardd__ite"
-              v-for="(item, index) in items"
-              :key="index"
-              @click="router.push('/info')"
-            >
+            <li class="cardd__ite" v-for="(item, index) in items" :key="index" @click="router.push('/info')">
               <img :src="item.image" alt="" />
               <p class="title">{{ item.title }}</p>
               <p class="subtitle">{{ item.subtitle }}</p>
             </li>
           </ul>
+        </v-col>
+      </v-row>
+
+      <v-row class="d-flex justify-center py-12" style="background-color: #e0d5c3">
+        <v-col cols="11" md="8">
+          <v-row class="d-flex align-start text-center">
+            <v-col cols="4">
+              <p class="info-title">Студия массажа</p>
+              <p class="text">
+                Оздоровительный центр YOGASTUDIOfabric был открыт в 2012 году. Основная цель йоги — это оздоровление
+                организма. Задача преподавателя — не навредить,
+              </p>
+            </v-col>
+            <v-col cols="4">
+              <p class="info-title">Преподаватели</p>
+              <p class="text">
+                Наши преподаватели решают три основные задачи на занятиях йогой:<br />
+                —воспитательная (правильный режим дня, сбалансированное питание);
+              </p>
+            </v-col>
+            <v-col cols="4">
+              <p class="info-title">Masssage</p>
+              <img src="https://yogaperm.ru/wp-content/uploads/zal-sibirskaya.jpg" alt="">
+            </v-col>
+          </v-row>
         </v-col>
       </v-row>
     </v-col>
@@ -161,5 +159,14 @@ img:hover {
   margin: 10px 0; // Введен только вертикальный отступ
   flex: 0 0 calc(25% - 20px); // Каждая карточка занимает 1/3 ширины с учетом отступа
   max-width: calc(25% - 20px); // Максимальная ширина карточки
+}
+
+.text {
+  font-size: clamp(0.8125rem, 0.6634rem + 0.4261vw, 1rem);
+}
+.info-title {
+  font-size: clamp(1.5rem, 1.2017rem + 0.8523vw, 1.875rem);
+  font-weight: 500;
+  margin-bottom: 20px;
 }
 </style>

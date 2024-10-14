@@ -11,7 +11,7 @@ const massagesList = [
     to: "/info",
   },
   {
-    title: "С неграми",
+    title: "Какой-то ещё",
     to: "/info",
   },
 ]
@@ -29,7 +29,7 @@ const massagesList = [
         </v-col>
       </v-row>
     </v-app-bar>
-    <v-app-bar :elevation="0" height="80">
+    <v-app-bar :elevation="0" height="70">
       <v-row class="d-flex justify-center">
         <v-col cols="6" class="d-flex justify-space-around align-center">
           <img class="logo" @click="router.push('/')" src="" alt="логотип" />
