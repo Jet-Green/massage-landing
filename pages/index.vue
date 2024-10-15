@@ -45,7 +45,7 @@ const items = [
       </v-row>
 
       <v-row class="d-flex justify-center text-center mt-5 mb-5">
-        <v-col cols="12" md="10" lg="8">
+        <v-col cols="11" md="10" lg="8">
           <p class="glav" style="padding: 50px 0 40px 0">MASSAGE</p>
           <p class="headline">
             Мы — команда квалифицированных преподавателей. <br />
@@ -69,23 +69,23 @@ const items = [
       <v-row class="d-flex justify-center py-12" style="background-color: #e0d5c3">
         <v-col cols="11" md="8">
           <v-row class="d-flex align-start text-center">
-            <v-col cols="4">
+            <v-col cols="12" md="4">
               <p class="info-title">Студия массажа</p>
               <p class="text">
                 Оздоровительный центр YOGASTUDIOfabric был открыт в 2012 году. Основная цель йоги — это оздоровление
                 организма. Задача преподавателя — не навредить,
               </p>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="12" md="4">
               <p class="info-title">Преподаватели</p>
               <p class="text">
                 Наши преподаватели решают три основные задачи на занятиях йогой:<br />
                 —воспитательная (правильный режим дня, сбалансированное питание);
               </p>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="12" md="4">
               <p class="info-title">Masssage</p>
-              <img src="https://yogaperm.ru/wp-content/uploads/zal-sibirskaya.jpg" alt="">
+              <img src="https://yogaperm.ru/wp-content/uploads/zal-sibirskaya.jpg" alt="" />
             </v-col>
           </v-row>
         </v-col>
@@ -98,67 +98,62 @@ const items = [
   text-align: center;
   list-style: none;
   display: flex;
-  flex-wrap: wrap; // добавлено для обтекания элементов
-  justify-content: center; // центрирование элементов
-  margin: 0 -10px; // убираем отступы по бокам
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0; // Added padding to avoid default margins
 }
 
 .cardd__ite {
-  margin: 10px; // отступ между элементами
-  flex: 1 0 45%; // адаптивная ширина для карточек
-  max-width: 250px; // максимальная ширина карточки
+  margin: 10px; // Space between elements
+  flex: 1 0 45%; // Responsive width
+  max-width: calc(25% - 20px); // Adjusted max width for larger screens
+
+  @media (max-width: 600px) {
+    flex: 1 0 90%; // Full width on small screens
+    max-width: 90%; // Full width on small screens
+  }
+  @media (max-width: 1200px) and (min-width: 600px) {
+    max-width: calc(50% - 20px); // Adjusted max width for larger screens
+  }
 }
+
 .glav {
   font-size: clamp(2rem, 1.6479rem + 1.1268vw, 3rem);
 }
 img {
-  width: 100%; // изображение занимает всю ширину карточки
-  border-radius: 8px; // скругленные края изображения
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-img:hover {
-  transform: translateY(-10px);
-  transition: 0.4em;
-}
-.title {
-  font-weight: 600;
-  font-size: clamp(1rem, 1.162rem + 0.2817vw, 1.5rem);
-}
-
-.headline {
-  font-size: clamp(1.25rem, 1.162rem + 0.2817vw, 1.5rem);
-}
-
-.super-blur-image {
-  background-size: cover;
-}
-
-.card {
-  background-color: #efdeb3;
-  padding: 4px;
-  border-radius: 8px;
-  cursor: pointer;
-  color: #809248;
+  width: 100%; // Установка ширины изображения на 100%
+  height: auto; // Автоматическая высота для сохранения пропорций
+  border-radius: 8px; // Закругление углов изображений
 }
 
 .carousel-btn {
-  background-color: #eddb99;
-  color: #809248;
-}
-.cardd {
-  text-align: center;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; // Изменено на space-between для равномерного распределения элементов
-  margin: 0; // Убрали отступы по бокам
+  background-color: rgba(255, 255, 255, 0.7); // Полупрозрачный фон для кнопок
+  border-radius: 50%; // Кнопки имеют круглую форму
+  color: #333; // Цвет иконок
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 1); // Изменение фона при наведении
+  }
 }
 
-.cardd__ite {
-  margin: 10px 0; // Введен только вертикальный отступ
-  flex: 0 0 calc(25% - 20px); // Каждая карточка занимает 1/3 ширины с учетом отступа
-  max-width: calc(25% - 20px); // Максимальная ширина карточки
+.super-blur-image {
+  /* Здесь вы можете добавить стили для эффекта размытия фона */
+  position: relative;
+  overflow: hidden; // Скрытие переполнения
+  .v-carousel {
+    height: 400px; // Установка фиксированной высоты карусели
+    img {
+      object-fit: cover; // Обеспечение заполнения контейнера изображением
+    }
+  }
+}
+
+.headline {
+  font-size: clamp(1rem, 0.7857rem + 1.4286vw, 1.5rem);
+  line-height: 1.5; // Высота строки для лучшей читаемости
+  margin-top: 10px; // Отступ сверху
 }
 
 .text {
