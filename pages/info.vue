@@ -6,13 +6,15 @@ const router = useRouter()
 <template>
   <v-row class="d-flex justify-center">
     <v-col cols="11" md="8">
-      <v-row class="card">
+      <v-row class="main-info">
         <v-col
           cols="12"
-          style="display: flex; justify-content: start; align-items: center; font-size: 25px; cursor: pointer;"
+          style="display: flex; justify-content: start; align-items: center; cursor: pointer;"
           @click="router.push('/')"
         >
+        <span style="font-size: 20px;">
           <v-icon class="mr-4" icon="mdi-arrow-left"></v-icon>
+        </span>
           <h1>Лимфодренажный массаж</h1>
         </v-col>
         <v-col cols="12" sm="6">
@@ -88,7 +90,7 @@ const router = useRouter()
       </div> -->
     </v-col>
   </v-row>
-  <v-row class="d-flex justify-center" style="background-color: #809248; color: white">
+  <v-row class="d-flex justify-center " style="background-color: #809248; color: white">
     <v-col cols="11" md="8">
       <h2>Показания к массажу</h2>
       <p>
@@ -123,9 +125,9 @@ const router = useRouter()
 //   margin-left: 20px;
 //   width: 50%;
 // }
-.card {
+.main-info {
   // background-color: #eddb99;
-  color: #809248;
+  // color: #809248;
   border-radius: 8px;
   margin-top: 30px;
   margin-bottom: 30px;

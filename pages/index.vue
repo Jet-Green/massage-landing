@@ -56,8 +56,8 @@ const items = [
 
       <v-row class="d-flex justify-center" style="margin-bottom: 50px">
         <v-col cols="11" md="8">
-          <ul class="cardd">
-            <li class="cardd__ite" v-for="(item, index) in items" :key="index" @click="router.push('/info')">
+          <ul class="card">
+            <li class="card__item" v-for="(item, index) in items" :key="index" @click="router.push('/info')">
               <img :src="item.image" alt="" />
               <p class="title">{{ item.title }}</p>
               <p class="subtitle">{{ item.subtitle }}</p>
@@ -94,7 +94,7 @@ const items = [
   </v-row>
 </template>
 <style scoped lang="scss">
-.cardd {
+.card {
   text-align: center;
   list-style: none;
   display: flex;
@@ -104,7 +104,8 @@ const items = [
   padding: 0; // Added padding to avoid default margins
 }
 
-.cardd__ite {
+.card__item {
+  cursor: pointer;
   margin: 10px; // Space between elements
   flex: 1 0 45%; // Responsive width
   max-width: calc(25% - 20px); // Adjusted max width for larger screens
@@ -137,16 +138,10 @@ img {
     background-color: rgba(255, 255, 255, 1); // Изменение фона при наведении
   }
 }
-
-.super-blur-image {
-  /* Здесь вы можете добавить стили для эффекта размытия фона */
-  position: relative;
-  overflow: hidden; // Скрытие переполнения
-  .v-carousel {
-    height: 400px; // Установка фиксированной высоты карусели
-    img {
-      object-fit: cover; // Обеспечение заполнения контейнера изображением
-    }
+.v-carousel {
+  height: 400px; // Установка фиксированной высоты карусели
+  img {
+    object-fit: cover; // Обеспечение заполнения контейнера изображением
   }
 }
 
