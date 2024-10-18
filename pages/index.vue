@@ -37,9 +37,51 @@ const items = [
             <template v-slot:next="{ props }">
               <v-btn class="carousel-btn" @click="props.onClick" icon="mdi-chevron-right"></v-btn>
             </template>
-            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/docks.jpg" cover></v-carousel-item>
-            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/hotel.jpg" cover></v-carousel-item>
-            <v-carousel-item src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg" cover></v-carousel-item>
+            <v-carousel-item>
+              <div
+                style="
+                  background-image: url('https://cdn.vuetifyjs.com/images/cards/docks.jpg');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span class="carousel-text">Массаж</span>
+              </div>
+            </v-carousel-item>
+            <v-carousel-item>
+              <div
+                style="
+                  background-image: url('https://cdn.vuetifyjs.com/images/cards/hotel.jpg');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span class="carousel-text">авыав</span>
+              </div>
+            </v-carousel-item>
+            <v-carousel-item>
+              <div
+                style="
+                  background-image: url('https://cdn.vuetifyjs.com/images/cards/sunshine.jpg');
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+              >
+                <span class="carousel-text">и не только массаж</span>
+              </div>
+            </v-carousel-item>
           </v-carousel>
         </v-col>
       </v-row>
@@ -158,5 +200,12 @@ img {
   font-size: clamp(1.5rem, 1.2017rem + 0.8523vw, 1.875rem);
   font-weight: 500;
   margin-bottom: 20px;
+}
+
+.carousel-text {
+  font-size: clamp(2.125rem, 1.7647rem + 1.0294vw, 3rem);
+  color: white;
+  font-weight: 500;
+  text-shadow: #333 0px 0 12px;
 }
 </style>

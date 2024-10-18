@@ -15,9 +15,40 @@ const massagesList = [
     to: "/info",
   },
 ]
+
+let drawer = ref(false)
+
+function selectNav(a: any) {
+  console.log(a.id);
+  router.push(a.id)
+  drawer.value = false;
+}
 </script>
 <template>
   <v-app>
+    <v-navigation-drawer v-model="drawer" persistent temporary location="right" color="#191919">
+      <div class="d-flex justify-end align-center" style="height: 72px">
+        <v-icon icon="mdi-close" @click="drawer = !drawer" style="height: 48px; width: 48px"></v-icon>
+      </div>
+      <v-list nav @click:select="selectNav">
+        <v-list-group value="group1">
+          <template v-slot:activator="{ props }">
+            <v-list-item title="Направления массажа" v-bind="props"></v-list-item>
+          </template>
+          <v-list-item title="Какой-то массаж" value="/info?id=12313"></v-list-item>
+          <v-list-item title="Какой-то массаж" value="/info?id=123132"></v-list-item>
+
+          <!-- <v-list-group value="group2">
+            <template v-slot:activator="{ props }">
+            </template>
+          </v-list-group> -->
+        </v-list-group>
+        <v-list-item title="Расписание" value="/#footer" :active="false"></v-list-item>
+        <v-list-item title="Обучение" value="/#footer" :active="false"></v-list-item>      
+        <v-list-item title="О нас" value="/#footer" :active="false"></v-list-item>      
+        <!-- <v-list-item title="About" value="about"></v-list-item> -->
+      </v-list>
+    </v-navigation-drawer>
     <v-app-bar scroll-behavior="fully-hide" :elevation="0" height="40" color="#E0D5C3">
       <v-row class="d-flex justify-center">
         <v-col cols="11" md="8" class="second-header">
@@ -31,11 +62,13 @@ const massagesList = [
     </v-app-bar>
     <v-app-bar :elevation="0" height="70">
       <v-row class="d-flex justify-center">
-        <v-col cols="6" class="d-flex justify-space-around align-center">
+        <v-col cols="12" md="6" class="d-flex justify-space-between justify-md-space-around align-center">
           <img class="logo" @click="router.push('/')" src="" alt="логотип" />
           <div class="desktop-navigation d-md-flex d-none">
             <div class="nav-item border-right" id="menu-activator">
-              <NuxtLink style="cursor: pointer"> Виды массажа <v-icon style="font-size: 16px;" icon="mdi-chevron-down"></v-icon> </NuxtLink>
+              <NuxtLink style="cursor: pointer">
+                Виды массажа <v-icon style="font-size: 16px" icon="mdi-chevron-down"></v-icon>
+              </NuxtLink>
               <v-menu activator="#menu-activator">
                 <div class="menu">
                   <div class="menu-item" v-for="(item, index) in massagesList" :key="index">
@@ -60,7 +93,9 @@ const massagesList = [
               <NuxtLink :to="{ path: '/', hash: '#footer' }"> Обучение </NuxtLink>
             </div>
           </div>
-          <div class="phone-navigation d-flex d-md-none">on phone</div>
+          <div class="phone-navigation d-flex d-md-none">
+            <v-app-bar-nav-icon variant="text" color="#809248" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+          </div>
         </v-col>
       </v-row>
     </v-app-bar>

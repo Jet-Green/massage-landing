@@ -12,10 +12,10 @@ const router = useRouter()
           style="display: flex; justify-content: start; align-items: center; cursor: pointer;"
           @click="router.push('/')"
         >
-        <span style="font-size: 20px;">
+        <span style="font-size: 16px;">
           <v-icon class="mr-4" icon="mdi-arrow-left"></v-icon>
         </span>
-          <h1>Лимфодренажный массаж</h1>
+          <p class="title">Лимфодренажный массаж</p>
         </v-col>
         <v-col cols="12" sm="6">
           <img src="/assets/images/main-page-img.jpg" alt="" style="width: 100%" />
@@ -137,5 +137,9 @@ const router = useRouter()
   p {
     color: black;
   }
+}
+.title {
+  font-weight: 500;
+  font-size: clamp(1.25rem, 0.8897rem + 1.0294vw, 2.125rem);
 }
 </style>
