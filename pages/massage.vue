@@ -2,20 +2,26 @@
 import { useRouter } from "vue-router"
 
 const router = useRouter()
+const massageStore = useMassage()
+let { massages } = storeToRefs(massageStore)
+
+const currentMassageId = router.currentRoute.value.query?._id
+
+let massage = ref(massages.value.find((m) => m._id == currentMassageId))
 </script>
 <template>
-  <v-row class="d-flex justify-center">
+  <v-row class="d-flex justify-center" v-if="massage?._id">
     <v-col cols="11" md="8">
       <v-row class="main-info">
         <v-col
           cols="12"
-          style="display: flex; justify-content: start; align-items: center; cursor: pointer;"
+          style="display: flex; justify-content: start; align-items: center; cursor: pointer"
           @click="router.push('/')"
         >
-        <span style="font-size: 16px;">
-          <v-icon class="mr-4" icon="mdi-arrow-left"></v-icon>
-        </span>
-          <p class="title">Лимфодренажный массаж</p>
+          <span style="font-size: 16px">
+            <v-icon class="mr-4" icon="mdi-arrow-left"></v-icon>
+          </span>
+          <p class="title">{{ massage.name }}</p>
         </v-col>
         <v-col cols="12" sm="6">
           <img src="/assets/images/main-page-img.jpg" alt="" style="width: 100%" />
@@ -23,17 +29,13 @@ const router = useRouter()
         <v-col>
           <h2>Эффект от массажа</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore sint sed voluptate, natus
-            impedit ullam eveniet voluptatibus consequuntur nobis illo optio, quos autem nemo modi. Dolores expedita
-            natus vitae!
+            {{ massage.effect }}
           </p>
         </v-col>
         <v-col cols="12">
           <h2>Какой результат</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolore sint sed voluptate, natus
-            impedit ullam eveniet voluptatibus consequuntur nobis illo optio, quos autem nemo modi. Dolores expedita
-            natus vitae!
+            {{ massage.result }}
           </p>
         </v-col>
       </v-row>
@@ -90,21 +92,23 @@ const router = useRouter()
       </div> -->
     </v-col>
   </v-row>
-  <v-row class="d-flex justify-center " style="background-color: #809248; color: white">
+  <v-row v-if="massage?._id" class="d-flex justify-center" style="background-color: #809248; color: white">
     <v-col cols="11" md="8">
       <h2>Показания к массажу</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos reprehenderit incidunt nobis voluptatibus
-        minima consequuntur in quaerat quia illum labore nam nostrum blanditiis quam ratione nulla sequi, vel officiis
-        architecto?
+        {{ massage.indications }}
       </p>
     </v-col>
     <v-col cols="11" md="8">
       <h2>Противопоказания</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas tempore recusandae dolorum ab ut voluptates
-        aspernatur. Voluptatem, quaerat voluptatibus. Commodi minus quo quam ab harum rem minima? Error, similique quas.
+        {{ massage.contraindications }}
       </p>
+    </v-col>
+  </v-row>
+  <v-row v-if="!massage?._id">
+    <v-col cols="12" class="d-flex justify-center align-center" style="min-height: 60vh;">
+      <v-progress-circular color="#809248" indeterminate :size="100"></v-progress-circular>
     </v-col>
   </v-row>
 </template>

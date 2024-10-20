@@ -1,28 +1,42 @@
 <script setup lang="ts">
-const router = useRouter()
+const massageStore = useMassage()
 
-const massagesList = [
-  {
-    title: "Обычный",
-    to: "/info",
-  },
-  {
-    title: "Необычный",
-    to: "/info",
-  },
-  {
-    title: "Какой-то ещё",
-    to: "/info",
-  },
-]
+const router = useRouter()
+let { massages } = storeToRefs(massageStore)
+
+let navigation = computed(() => {
+  return massages.value.map((massage) => {
+    return {
+      title: massage.name,
+      to: `/massage?_id=${massage._id}`,
+    }
+  })
+})
+
+// [
+//   {
+//     title: "Обычный",
+//     to: "/info",
+//   },
+//   {
+//     title: "Необычный",
+//     to: "/info",
+//   },
+//   {
+//     title: "Какой-то ещё",
+//     to: "/info",
+//   },
+// ]
 
 let drawer = ref(false)
 
 function selectNav(a: any) {
-  console.log(a.id);
+  console.log(a.id)
   router.push(a.id)
-  drawer.value = false;
+  drawer.value = false
 }
+
+await massageStore.getAll()
 </script>
 <template>
   <v-app>
@@ -35,8 +49,8 @@ function selectNav(a: any) {
           <template v-slot:activator="{ props }">
             <v-list-item title="Направления массажа" v-bind="props"></v-list-item>
           </template>
-          <v-list-item title="Какой-то массаж" value="/info?id=12313"></v-list-item>
-          <v-list-item title="Какой-то массаж" value="/info?id=123132"></v-list-item>
+
+          <v-list-item v-for="(item, index) of navigation" :title="item.title" :value="item.to"></v-list-item>
 
           <!-- <v-list-group value="group2">
             <template v-slot:activator="{ props }">
@@ -44,8 +58,8 @@ function selectNav(a: any) {
           </v-list-group> -->
         </v-list-group>
         <v-list-item title="Расписание" value="/#footer" :active="false"></v-list-item>
-        <v-list-item title="Обучение" value="/#footer" :active="false"></v-list-item>      
-        <v-list-item title="О нас" value="/#footer" :active="false"></v-list-item>      
+        <v-list-item title="Обучение" value="/#footer" :active="false"></v-list-item>
+        <v-list-item title="О нас" value="/#footer" :active="false"></v-list-item>
         <!-- <v-list-item title="About" value="about"></v-list-item> -->
       </v-list>
     </v-navigation-drawer>
@@ -71,7 +85,7 @@ function selectNav(a: any) {
               </NuxtLink>
               <v-menu activator="#menu-activator">
                 <div class="menu">
-                  <div class="menu-item" v-for="(item, index) in massagesList" :key="index">
+                  <div class="menu-item" v-for="(item, index) in navigation" :key="index">
                     <NuxtLink :to="item.to">{{ item.title }}</NuxtLink>
                     <!-- {{ item }} -->
                   </div>

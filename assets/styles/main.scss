@@ -1,13 +1,6 @@
 @import "./animations.scss";
 @import "../../node_modules/ol/ol.css";
 
-@font-face {
-  font-family: "Sensei";
-  src: url("~/assets/fonts/Sensei.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 button.v-btn[disabled] {
   .v-btn__overlay {
     opacity: 0.2;

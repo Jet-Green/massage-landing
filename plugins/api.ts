@@ -19,7 +19,7 @@ export default defineNuxtPlugin(() => {
       }
       if (response.status === 401) {
         useState('authRedirect').value = useRoute().path
-        navigateTo('/login')
+        // navigateTo('/login')
       }
     }
   })

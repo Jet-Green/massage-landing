@@ -1,28 +1,6 @@
 <script lang="ts" setup>
 const router = useRouter()
-
-const items = [
-  {
-    title: "выаав",
-    subtitle: "ыавав",
-    image: "https://yogaperm.ru/wp-content/uploads/yoga-v-permi-yoga-v-gamakah.jpg",
-  },
-  {
-    title: "выаав",
-    subtitle: "ыавав",
-    image: "https://yogaperm.ru/wp-content/uploads/yoga-v-permi-yoga-v-gamakah.jpg",
-  },
-  {
-    title: "выаав",
-    subtitle: "ыавав",
-    image: "https://yogaperm.ru/wp-content/uploads/yoga-v-permi-yoga-v-gamakah.jpg",
-  },
-  {
-    title: "выаав",
-    subtitle: "ыавав",
-    image: "https://yogaperm.ru/wp-content/uploads/yoga-v-permi-yoga-v-gamakah.jpg",
-  },
-]
+let { massages } = useMassage()
 </script>
 
 <template>
@@ -99,10 +77,10 @@ const items = [
       <v-row class="d-flex justify-center" style="margin-bottom: 50px">
         <v-col cols="11" md="8">
           <ul class="card">
-            <li class="card__item" v-for="(item, index) in items" :key="index" @click="router.push('/info')">
+            <li class="card__item" v-for="(item, index) in massages" :key="index" @click="router.push(`/massage?_id=${item._id}`)">
               <img :src="item.image" alt="" />
-              <p class="title">{{ item.title }}</p>
-              <p class="subtitle">{{ item.subtitle }}</p>
+              <p class="name">{{ item.name }}</p>
+              <p class="description">{{ item.description }}</p>
             </li>
           </ul>
         </v-col>
@@ -207,5 +185,12 @@ img {
   color: white;
   font-weight: 500;
   text-shadow: #333 0px 0 12px;
+}
+.name {
+  font-size: clamp(1rem, 0.7017rem + 0.8523vw, 1.375rem);
+  font-weight: 500;
+}
+.description {
+  font-size: clamp(0.875rem, 0.7756rem + 0.2841vw, 1rem);
 }
 </style>
