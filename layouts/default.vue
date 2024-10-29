@@ -36,7 +36,7 @@ function selectNav(a: any) {
   drawer.value = false
 }
 
-await massageStore.getAll()
+// await massageStore.getAll()
 </script>
 <template>
   <v-app>
@@ -77,7 +77,7 @@ await massageStore.getAll()
     <v-app-bar :elevation="0" height="70">
       <v-row class="d-flex justify-center">
         <v-col cols="12" md="6" class="d-flex justify-space-between justify-md-space-around align-center">
-          <img class="logo" @click="router.push('/')" src="" alt="логотип" />
+          <img class="logo" @click="router.push('/')" src="../assets/images/logo-no-bg.png" alt="логотип" />
           <div class="desktop-navigation d-md-flex d-none">
             <div class="nav-item border-right" id="menu-activator">
               <NuxtLink style="cursor: pointer">
@@ -133,15 +133,14 @@ await massageStore.getAll()
               <v-row>
                 <v-col cols="12" md="4">
                   <h3>О студии</h3>
-                  Мы команда квалифицированных преподавателей. У нас вы найдете индивидуальный подход, дружескую теплую
-                  атмосферу, уютные и чистые залы.
+                  Здесь вы найдете индивидуальный подход и решения по оздоровлению вашего тела
                 </v-col>
                 <v-col cols="12" md="4">
                   <h3>Ждем вас</h3>
-                  <div class="my-4">Сибирская, 27а, кабинет 021</div>
+                  <div class="my-4">г. Пермь, ул. Пермская д.161</div>
                   <h3>Звоните</h3>
                   <div class="my-4">
-                    <NuxtLink to="tel:+79127528877">+79127528877</NuxtLink>
+                    <NuxtLink to="tel:8(922)3111260">8 (922) 311 12 60</NuxtLink>
                   </div>
                   <h3>Пишите</h3>
                   <div class="my-4">
@@ -196,6 +195,7 @@ await massageStore.getAll()
 <style scoped lang="scss">
 .logo {
   cursor: pointer;
+  height: 90px;
 }
 .desktop-navigation {
   color: #809248;

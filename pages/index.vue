@@ -77,7 +77,12 @@ let { massages } = useMassage()
       <v-row class="d-flex justify-center" style="margin-bottom: 50px">
         <v-col cols="11" md="8">
           <ul class="card">
-            <li class="card__item" v-for="(item, index) in massages" :key="index" @click="router.push(`/massage?_id=${item._id}`)">
+            <li
+              class="card__item"
+              v-for="(item, index) in massages"
+              :key="index"
+              @click="router.push(`/massage?_id=${item._id}`)"
+            >
               <img :src="item.image" alt="" />
               <p class="name">{{ item.name }}</p>
               <p class="description">{{ item.description }}</p>
@@ -90,17 +95,25 @@ let { massages } = useMassage()
         <v-col cols="11" md="8">
           <v-row class="d-flex align-start text-center">
             <v-col cols="12" md="4">
-              <p class="info-title">Студия массажа</p>
-              <p class="text">
-                Оздоровительный центр YOGASTUDIOfabric был открыт в 2012 году. Основная цель йоги — это оздоровление
-                организма. Задача преподавателя — не навредить,
+              <p class="info-title">О мастере</p>
+              <p class="text" style="text-align: start">
+                «<i
+                  >Постоянно стремлюсь обучаться и познавать все новое для совершенствования техники массажа и
+                  оздоровления организма. Специализируюсь на оздоровительных практиках более 15 лет.</i
+                >»
+                <br />
+                <b> - Олег В. </b>
               </p>
             </v-col>
             <v-col cols="12" md="4">
-              <p class="info-title">Преподаватели</p>
+              <p class="info-title">Мастер – эксперт</p>
               <p class="text">
-                Наши преподаватели решают три основные задачи на занятиях йогой:<br />
-                —воспитательная (правильный режим дня, сбалансированное питание);
+                Сертифицированный выпускник школы Grand Secret. Призёр Республиканского чемпионата по массажу, в
+                номинации «мастер СПА». Работаю с людьми всех возрастов, от детей до пожилых. Владею мышечным
+                тестированием по методике «Прикладной кинезиологии», что дает возможность строить индивидуальные
+                программы с целостным подходом. Подбираю индивидуальные массажные приемы, такие как: классический,
+                антицеллюлитный, лимфодренажный, испанский, висцеральный, холистический палсинг. Работаю с вегетативно -
+                нервной системой. А также с восстановлением мышечного тонуса при наличии операционных швов.
               </p>
             </v-col>
             <v-col cols="12" md="4">
