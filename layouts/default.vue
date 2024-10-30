@@ -66,10 +66,10 @@ function selectNav(a: any) {
     <v-app-bar scroll-behavior="fully-hide" :elevation="0" height="40" color="#E0D5C3">
       <v-row class="d-flex justify-center">
         <v-col cols="11" md="8" class="second-header">
-          Массаж в Перми
-          <div>
-            <v-icon icon="mdi-phone" style="font-size: 18px"></v-icon>
-            <NuxtLink to="tel:+7982457-50-51">+7 982 457-50-51</NuxtLink>
+          Массаж в Перми: классический, лимфодренажный, антицеллюлитный, СПА, для лица
+          <div class="d-flex">
+            <a href="tel:8(922)3111260"><v-icon icon="mdi-phone" style="font-size: 18px"></v-icon></a>
+            <NuxtLink class="d-none d-sm-flex" to="tel:8(922)3111260">8 (922) 311 12 60</NuxtLink>
           </div>
         </v-col>
       </v-row>
@@ -101,7 +101,7 @@ function selectNav(a: any) {
               <NuxtLink :to="{ path: '/', hash: '#footer' }"> Расписание </NuxtLink>
             </div>
             <div class="nav-item border-right">
-              <NuxtLink to="/price"> Стоимость </NuxtLink>
+              <NuxtLink :to="{ path: '/', hash: '#about-us' }"> О нас </NuxtLink>
             </div>
             <div class="nav-item">
               <NuxtLink :to="{ path: '/', hash: '#footer' }"> Обучение </NuxtLink>
@@ -119,12 +119,11 @@ function selectNav(a: any) {
       <v-row>
         <v-col cols="12" class="contacts">
           <div class="w-100 d-flex justify-center">
-            Запишись на пробное занятие, &nbsp;<NuxtLink to="tel:+79127528877">+79127528877</NuxtLink>
+            Запишись на пробное занятие, &nbsp; <NuxtLink to="tel:8(922)3111260">8 (922) 311 12 60</NuxtLink>
           </div>
           <div class="w-100 d-flex justify-center">
-            Или пишите&nbsp;<NuxtLink to="https://vk.com">VK</NuxtLink>,&nbsp;<NuxtLink to="https://t.me"
-              >Telegram</NuxtLink
-            >
+            Или пишите&nbsp;<NuxtLink to="https://vk.com">VK</NuxtLink>,&nbsp;<NuxtLink to="https://t.me">Telegram
+            </NuxtLink>
           </div>
         </v-col>
         <v-col cols="12" class="main-info" id="footer">
@@ -171,9 +170,9 @@ function selectNav(a: any) {
           <v-row class="d-flex justify-center">
             <v-col cols="10" md="8">
               <v-row>
-                <v-col cols="6"> © 20xx-2024 MASSAGESTUDIO Пермь </v-col>
+                <v-col cols="6"> © 2024 Олег Волков, Пермь </v-col>
                 <v-col cols="6" class="d-flex justify-end">
-                  <NuxtLink to="/">
+                  <NuxtLink to="https://t.me/jet_green">
                     <b> Над сайтом работали </b>
                   </NuxtLink>
                 </v-col>
@@ -197,8 +196,10 @@ function selectNav(a: any) {
   cursor: pointer;
   height: 90px;
 }
+
 .desktop-navigation {
   color: #809248;
+
   .nav-item {
     margin: 10px;
     margin-right: 0;
@@ -207,12 +208,14 @@ function selectNav(a: any) {
     display: flex;
     align-items: center;
   }
+
   .border-right {
     border-right: 1px solid rgba(128, 146, 72, 0.2);
   }
 }
-.phone-navigation {
-}
+
+.phone-navigation {}
+
 .contacts {
   background-color: #2b2b2b;
   color: #eddb99;
@@ -220,28 +223,37 @@ function selectNav(a: any) {
   justify-content: center;
   flex-direction: column;
 }
+
 .main-info {
   background-color: #303030;
   padding-top: 50px;
   padding-bottom: 50px;
+
   h3 {
     color: white;
   }
+
   color: #eddb99;
 }
+
 .copyright {
   border-top: 1px solid rgba(128, 146, 72, 0.2);
   background-color: #303030;
   color: #eddb99;
 }
+
 .second-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: clamp(0.625rem, 0.3267rem + 0.8523vw, 1rem);
 }
+
 .menu {
   border: 1px solid rgba(128, 146, 72, 0.2);
   border-radius: 4px;
   background-color: white;
+
   .menu-item {
     padding: 10px;
   }

@@ -66,10 +66,9 @@ let { massages } = useMassage()
 
       <v-row class="d-flex justify-center text-center mt-5 mb-5">
         <v-col cols="11" md="10" lg="8">
-          <p class="glav" style="padding: 50px 0 40px 0">MASSAGE</p>
+          <p class="glav" style="padding: 50px 0 40px 0">Олег Волков</p>
           <p class="headline">
-            Мы — команда квалифицированных преподавателей. <br />
-            У нас вы найдете индивидуальный подход, дружескую теплую атмосферу, уютные и чистые залы.
+            Сертифицированный выпускник школы <b>Grand Secret</b>. <br> Призёр Республиканского чемпионата по массажу, в номинации <b>«мастер СПА»</b>.
           </p>
         </v-col>
       </v-row>
@@ -91,16 +90,14 @@ let { massages } = useMassage()
         </v-col>
       </v-row>
 
-      <v-row class="d-flex justify-center py-12" style="background-color: #e0d5c3">
+      <v-row class="d-flex justify-center py-12" style="background-color: #e0d5c3" id="about-us">
         <v-col cols="11" md="8">
           <v-row class="d-flex align-start text-center">
             <v-col cols="12" md="4">
               <p class="info-title">О мастере</p>
               <p class="text" style="text-align: start">
-                «<i
-                  >Постоянно стремлюсь обучаться и познавать все новое для совершенствования техники массажа и
-                  оздоровления организма. Специализируюсь на оздоровительных практиках более 15 лет.</i
-                >»
+                «Постоянно стремлюсь обучаться и познавать все новое для совершенствования техники массажа и
+                  оздоровления организма. Специализируюсь на оздоровительных практиках более 15 лет.»
                 <br />
                 <b> - Олег В. </b>
               </p>
@@ -117,8 +114,8 @@ let { massages } = useMassage()
               </p>
             </v-col>
             <v-col cols="12" md="4">
-              <p class="info-title">Masssage</p>
-              <img src="https://yogaperm.ru/wp-content/uploads/zal-sibirskaya.jpg" alt="" />
+              <!-- <p class="info-title">Masssage</p> -->
+              <img src="../assets/images/master-photo.png" alt="" />
             </v-col>
           </v-row>
         </v-col>
